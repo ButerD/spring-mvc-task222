@@ -19,7 +19,6 @@ public class CarController {
 
     @GetMapping(value = "/cars")
     public String printCars(Model model, @RequestParam(value = "count", defaultValue = "5") int count) {
-        System.out.println(count);
         model.addAttribute("carList", carService.getCars(count));
         return "cars";
     }
